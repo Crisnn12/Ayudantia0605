@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.Locale;
 
 @Service
 public class TaskService {
@@ -31,4 +32,23 @@ public class TaskService {
                 .filter(t -> t.getId() != null && t.getId().equals(id))
                 .findFirst();
     }
+
+    public List<Task> filtrarTareas(
+        String prioridad,
+        String titulo,
+        String fechaLimite) {
+
+    return tasks.stream()
+            .filter(task -> prioridad == null
+                    || prioridad.equals(task.getPrioridad()))
+            .filter(task -> titulo == null
+                    || (task.getTitulo() != null
+                    && task.getTitulo()
+                            .toLowerCase(Locale.ROOT)
+                            .contains(titulo.toLowerCase(Locale.ROOT))))
+            .filter(task -> fechaLimite == null
+                    || fechaLimite.equals(task.getFechaLimite()))
+            .toList();
 }
+}
+
