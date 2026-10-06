@@ -4,7 +4,7 @@
 > **Modalidad:** Parejas · **Duración:** 60 minutos · **Entrega:** Repositorio GitHub público
 
 ---
-
+aaaa
 ## Contexto
 
 Su equipo ha sido asignado para desarrollar la primera versión de una API REST de gestión de tareas (*to-do list*) para una startup. El tech lead exige que el equipo trabaje con **GitFlow**, que la aplicación esté **dockerizada** y que el pipeline de CI/CD publique automáticamente la imagen en el registro de contenedores de GitHub (GHCR) cada vez que se integre código a `main`.
