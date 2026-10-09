@@ -33,6 +33,13 @@ public class TaskService {
                 .findFirst();
     }
 
+    public Optional<Task> completeTask(Long id) {
+        return findById(id).map(task -> {
+            task.setCompletada(true);
+            return task;
+        });
+    }
+
     public List<Task> filtrarTareas(
         String prioridad,
         String titulo,
